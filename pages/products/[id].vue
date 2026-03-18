@@ -2,7 +2,7 @@
   <div class="max-w-5xl mx-auto space-y-6">
     <!-- Navigation -->
     <NuxtLink 
-      to="/products" 
+      to="/" 
       class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium group transition"
     >
       <svg class="w-5 h-5 mr-1 transform group-hover:-translate-x-1 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
