@@ -122,11 +122,11 @@ const handleLogin = async () => {
   
   try {
     await authStore.login({ username: username.value, password: password.value })
-    await new Promise(resolve => setTimeout(resolve, 50)) // Allow cookie storage to complete
     router.replace('/')
   } catch (err: any) {
     // Show error message
     error.value = err.data?.message || err.message || 'Invalid username or password'
+
   } finally {
     loading.value = false
   }

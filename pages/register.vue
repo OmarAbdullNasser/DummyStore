@@ -156,8 +156,6 @@ const handleRegister = async () => {
       password: form.password 
     })
     
-    // Slight buffer for cookie hydration
-    await new Promise(resolve => setTimeout(resolve, 50))
     router.replace('/')
   } catch (err: any) {
     // Show precise error message

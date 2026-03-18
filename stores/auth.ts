@@ -43,12 +43,6 @@ export const useAuthStore = defineStore('auth', () => {
 
   const register = async (userData: any) => {
     try {
-      // Task 12.3: Mock Duplicate Emails Check via local useCookie cache
-      const registeredEmails = useCookie<string[]>('registered_emails', { default: () => [] })
-      if (userData.email && registeredEmails.value.includes(userData.email)) {
-        throw new Error('This email is already registered.')
-      }
-
       const response = await $fetch<any>('https://dummyjson.com/users/add', {
         method: 'POST',
         headers: {
@@ -57,11 +51,6 @@ export const useAuthStore = defineStore('auth', () => {
         // We only pass back dummy data but we need to fulfill the assignment
         body: userData
       })
-
-      // Update mock duplicate cache
-      if (userData.email) {
-        registeredEmails.value.push(userData.email)
-      }
 
       // Dummyjson add user does not return a token.
       // The requirement: "storing the returned data (or a mock token) in the useCookie"

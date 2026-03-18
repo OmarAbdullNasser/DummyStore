@@ -83,24 +83,6 @@ describe('Auth Store (Task 9.1 & 13.1)', () => {
     expect($fetch).toHaveBeenCalledWith('https://dummyjson.com/users/add', expect.any(Object))
   })
 
-  it('throws an error if email is duplicated in useCookie cache (Task 13.1)', async () => {
-    const store = useAuthStore()
-    
-    // Explicitly mock a cookie array holding the duplicate
-    // @ts-ignore Bypass Nuxt stack depth limit
-    ;(imports.useCookie as any).mockImplementation((key: string) => {
-      if (key === 'registered_emails') return { value: ['test@example.com'], push: vi.fn() } as any
-      return { value: null } as any
-    })
-    
-    await expect(store.register({
-       firstName: 'Test',
-       username: 'test',
-       email: 'test@example.com',
-       password: 'pass'
-    })).rejects.toThrow('This email is already registered.')
-  })
-
   it('clears token and user state on logout', () => {
     const store = useAuthStore()
     
