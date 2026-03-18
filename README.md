@@ -6,6 +6,9 @@
 ![Pinia](https://img.shields.io/badge/Pinia-F6C23A?style=for-the-badge&logo=vue.js&logoColor=white)
 ![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
 
+🌍 **Live Demo:** [https://taskdummystore.netlify.app/login](https://taskdummystore.netlify.app/login)  
+🔗 **API Docs / Postman:** [DummyJSON API Documentation](https://dummyjson.com/)
+
 ## 📖 1. Project Overview
 
 A high-performance, responsive web application built to manage and display products using a public API. This technical task demonstrates proficiency in modern frontend development, showcasing a complete user flow from authentication to product discovery, designed with a focus on architecture, scalability, and exceptional user experience.
