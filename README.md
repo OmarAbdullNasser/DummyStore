@@ -7,7 +7,7 @@
 ![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
 
 🌍 **Live Demo:** [https://taskdummystore.netlify.app/login](https://taskdummystore.netlify.app/login)  
-🔗 **API Docs / Postman:** [DummyJSON API Documentation](https://dummyjson.com/)
+🔗 **DummyJSON Postman Collection:** [View Workspace](https://www.postman.com/ikhszy/dummy-json/overview?sideView=agentMode)
 
 ## 📖 1. Project Overview
 
