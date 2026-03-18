@@ -70,3 +70,12 @@ This project was built adhering strictly to professional software engineering st
 *   **🧩 Component-based Structure:** Modular, reusable Vue components promoting DRY principles and clear separation of concerns.
 *   **🧹 Clean Code Principles:** Readable, self-documenting TypeScript code leveraging strict typing, constants, and custom composables to encapsulate logic.
 *   **🌳 Git Practices:** Meaningful commit history with descriptive messages reflecting atomic changes and structured feature development.
+
+## 💡 8. Technical Insights & API Behavior
+
+To ensure a highly optimized and predictable application, the following internal logic was explicitly engineered referencing deep analysis of the DummyJSON API:
+
+*   **🔍 Search Logic (Full-Text Substring Matching):** The search architecture relies on a Server-Side Substring Matcher. Rather than strictly querying exact titles, searching for short substrings (e.g., `"mm"`) dynamically parses matches across both Titles and Descriptions globally (e.g., returning hits for *'summer'* or *'hammer'*).
+*   **🔗 Request Integrity:** Every global search and category filtering event is implicitly, mathematically bound to Pagination Parameters (`limit` & `skip`). This guarantees that component state exactly matches API output, heavily preventing memory bloat by forcing payloads to adhere to a strict 10-item limit per UI page.
+*   **🧹 Data Sanitization (Mapping):** DummyJSON payloads frequently return heavily excessive data points per product (e.g., dimensions, robust reviews, multi-layered policies). The Vue Store implements a strict `.map()` layer intercepting the response JSON and whitelisting only the 6 core properties required by Pinia (`id`, `title`, `description`, `price`, `image`, `category`). This sanitization keeps client-side rendering light and lightning-fast.
+*   **🩺 Debugging & Validation:** API responses, threshold delays, and search behaviors were actively validated using cURL and Postman prior to implementation to guarantee exact format alignment between the backend engine and our Vue frontend architecture.
