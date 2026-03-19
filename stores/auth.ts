@@ -36,7 +36,6 @@ export const useAuthStore = defineStore('auth', () => {
       }
       return true
     } catch (err: any) {
-      console.error('Login failed', err)
       throw err
     }
   }
@@ -67,7 +66,6 @@ export const useAuthStore = defineStore('auth', () => {
       }
       return true
     } catch (err: any) {
-      console.error('Registration failed', err)
       throw err
     }
   }
